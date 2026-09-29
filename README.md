@@ -1,10 +1,20 @@
 # X Media
 
+<p>
+  <a href="https://github.com/blixvip/x-media/actions/workflows/ci.yml"><img src="https://github.com/blixvip/x-media/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/node-26%2B-111?style=flat-square" alt="Node.js 26+">
+  <img src="https://img.shields.io/badge/Next.js-16-111?style=flat-square" alt="Next.js 16">
+  <img src="https://img.shields.io/badge/API%20key-not%20needed-111?style=flat-square" alt="No API key needed">
+  <img src="https://img.shields.io/badge/data-stays%20on%20your%20machine-111?style=flat-square" alt="Local data">
+</p>
+
 **Browse X media, search tweet history, and collect Reddit memes in one local workspace. Media, tweets, and Reddit collection need no API key or paid subscription.**
 
 X Media is a local web app for browsing an account's available public media. Enter a username, watch results arrive, and switch between videos, photos, GIFs, newest, and oldest. Saved collections reopen without another request to X.
 
 The archive uses the [FxTwitter public media timeline](https://docs.fxembed.com/api/twitter/operations/2profilehandlemedia/). It works with public usernames, including ordinary accounts; results depend on what the upstream service exposes. It cannot guarantee every account or a complete lifetime archive.
+
+**Why X Media?** Finding one video in an account's years of posts is painful on X itself. Type a username, get every public video, photo, and GIF in a filterable grid, and keep the library on your own computer so it reopens instantly next time.
 
 [Get started](#quick-start) · [Storage and privacy](#storage-and-privacy) · [Troubleshooting](#troubleshooting) · [Developer documentation](#development)
 
