@@ -2,7 +2,9 @@ allowBuilds:
   sharp: false
   unrs-resolver: false
 
-# Security fixes for transitive URL/query parsers. Keep consumers on their major.
+# Security fixes for transitive dependencies. Keep consumers on their major.
 overrides:
-  'fast-uri@>=3.0.0 <3.1.6': 3.1.6
+  'fast-uri@>=3.0.0 <3.1.7': 3.1.7
+  'js-yaml@>=4.0.0 <4.3.2': 4.3.2
+  'undici@>=7.0.0 <7.29.1': 7.29.1
   'qs@>=2.2.5 <6.16.0': 6.16.0
