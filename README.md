@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/Next.js-16-111?style=flat-square" alt="Next.js 16">
   <img src="https://img.shields.io/badge/API%20key-not%20needed-111?style=flat-square" alt="No API key needed">
   <img src="https://img.shields.io/badge/data-stays%20on%20your%20machine-111?style=flat-square" alt="Local data">
+  <a href="https://discord.gg/zEB4VjmfSb"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
 </p>
 
 **Browse X media, search tweet history, and collect Reddit memes in one local workspace. Media, tweets, and Reddit collection need no API key or paid subscription.**
@@ -171,6 +172,10 @@ pnpm build
 - [Performance and live verification](docs/PERFORMANCE.md)
 - [Dashboard configuration and scoring](docs/DASHBOARD.md)
 - [Product boundaries](PRODUCT.md) and [design system](DESIGN.md)
+
+## Community
+
+💬 [Join the Discord](https://discord.gg/zEB4VjmfSb) for questions, help, feedback, and updates.
 
 ## Discovery, attribution, and licensing
 
