@@ -1,7 +1,17 @@
-# X Media
+<p align="center">
+  <img src="src/app/icon.svg" width="84" alt="X Media icon">
+</p>
 
-<p>
-  <a href="https://github.com/blixvip/x-media/actions/workflows/ci.yml"><img src="https://github.com/blixvip/x-media/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+<h1 align="center">X Media</h1>
+
+<p align="center">
+  <b>Browse X media, search tweet history, and collect Reddit memes in one local workspace.</b><br>
+  Media, tweets, and Reddit collection need no API key or paid subscription.
+</p>
+
+<p align="center">
+  <a href="https://github.com/blixvip/x-media/stargazers"><img src="https://img.shields.io/github/stars/blixvip/x-media?style=flat-square&color=3387ed" alt="GitHub stars"></a>
+  <a href="https://github.com/blixvip/x-media/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/blixvip/x-media/ci.yml?branch=main&style=flat-square&label=CI" alt="CI"></a>
   <img src="https://img.shields.io/badge/node-26%2B-111?style=flat-square" alt="Node.js 26+">
   <img src="https://img.shields.io/badge/Next.js-16-111?style=flat-square" alt="Next.js 16">
   <img src="https://img.shields.io/badge/API%20key-not%20needed-111?style=flat-square" alt="No API key needed">
@@ -9,15 +19,24 @@
   <a href="https://discord.gg/zEB4VjmfSb"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
 </p>
 
-**Browse X media, search tweet history, and collect Reddit memes in one local workspace. Media, tweets, and Reddit collection need no API key or paid subscription.**
+<p align="center">
+  <a href="#features">Features</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#using-the-archive">Using the archive</a> ·
+  <a href="#storage-and-privacy">Storage and privacy</a> ·
+  <a href="#how-fast-is-it">Performance</a> ·
+  <a href="#coverage-and-limitations">Limitations</a> ·
+  <a href="#troubleshooting">Troubleshooting</a> ·
+  <a href="#development">Development</a>
+</p>
+
+---
 
 X Media is a local web app for browsing an account's available public media. Enter a username, watch results arrive, and switch between videos, photos, GIFs, newest, and oldest. Saved collections reopen without another request to X.
 
 The archive uses the [FxTwitter public media timeline](https://docs.fxembed.com/api/twitter/operations/2profilehandlemedia/). It works with public usernames, including ordinary accounts; results depend on what the upstream service exposes. It cannot guarantee every account or a complete lifetime archive.
 
 **Why X Media?** Finding one video in an account's years of posts is painful on X itself. Type a username, get every public video, photo, and GIF in a filterable grid, and keep the library on your own computer so it reopens instantly next time.
-
-[Get started](#quick-start) · [Storage and privacy](#storage-and-privacy) · [Troubleshooting](#troubleshooting) · [Developer documentation](#development)
 
 ## Features
 
