@@ -108,6 +108,8 @@ function MediaCard({
   const alt =
     item.media.altText?.trim() ||
     `${typeLabel(item.media.type)} from @${new URL(item.postUrl).pathname.split("/")[1]}`;
+  const text = item.postText?.trim();
+  const itemName = text ? (text.length > 60 ? `${text.slice(0, 60)}…` : text) : alt;
 
   return (
     <article className="group overflow-hidden rounded-xl border bg-card shadow-xs transition-shadow hover:shadow-sm">
@@ -150,13 +152,14 @@ function MediaCard({
             href={item.postUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Open post '${itemName}' on X`}
             className="inline-flex shrink-0 items-center gap-1 rounded-sm font-medium text-foreground underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             Post
             <ArrowUpRightIcon className="size-3" aria-hidden />
           </a>
         </div>
-        <FolderPicker media={{ source: "x", id: item.id, jobId }} />
+        <FolderPicker media={{ source: "x", id: item.id, jobId }} label={`Add '${itemName}' to folders`} />
       </div>
     </article>
   );
@@ -445,7 +448,7 @@ export function MediaArchiveExplorer() {
           </Alert>
         )}
 
-        {saved.length > 0 && <div className="mt-5 flex flex-wrap items-center justify-center gap-2" aria-label="Saved accounts">
+        {saved.length > 0 && <div className="mt-5 flex flex-wrap items-center justify-center gap-2" role="group" aria-label="Saved accounts">
           <span className="text-xs text-muted-foreground">Saved:</span>
           {saved.map((account) => <Button key={account.username} variant="ghost" size="sm" disabled={loading} onClick={() => void collect(account.username)}>@{account.username} · {account.count}</Button>)}
         </div>}

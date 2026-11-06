@@ -14,7 +14,7 @@ export async function foldersApi<T>(path = "", method = "GET", data?: unknown): 
   return result;
 }
 
-export function FolderPicker({ media, onSaved }: { media: MediaReference; onSaved?: () => void }) {
+export function FolderPicker({ media, onSaved, label }: { media: MediaReference; onSaved?: () => void; label?: string }) {
   const [open, setOpen] = useState(false);
   const [folders, setFolders] = useState<FolderSummary[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
@@ -42,12 +42,12 @@ export function FolderPicker({ media, onSaved }: { media: MediaReference; onSave
     finally { setBusy(false); }
   }
   return <>
-    <Button variant="ghost" size="sm" onClick={() => { setOpen(true); setName(""); void load(); }}><FolderPlusIcon aria-hidden />Folders</Button>
+    <Button variant="ghost" size="sm" aria-label={label} onClick={() => { setOpen(true); setName(""); void load(); }}><FolderPlusIcon aria-hidden />Folders</Button>
     <Dialog open={open} onOpenChange={value => { if (!busy) setOpen(value); }}>
       <DialogContent>
         <DialogHeader className="pr-8"><DialogTitle>Organize in folders</DialogTitle><DialogDescription>Choose one or more folders. Uncheck a folder to remove this item from it.</DialogDescription></DialogHeader>
         {loading ? <p role="status" className="py-5 text-sm text-muted-foreground">Loading your folders…</p> : ready && <>
-          <div className="max-h-64 space-y-1 overflow-y-auto" aria-label="Choose folders">
+          <div className="max-h-64 space-y-1 overflow-y-auto" role="group" aria-label="Choose folders">
             {folders.length ? folders.map(folder => <label key={folder.id} className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-3 hover:bg-muted">
               <input type="checkbox" className="size-4 shrink-0 accent-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring" disabled={busy} checked={selected.includes(folder.id)} onChange={event => setSelected(previous => event.target.checked ? [...previous, folder.id] : previous.filter(id => id !== folder.id))} />
               <span className="min-w-0 flex-1 break-words">{folder.name}</span><span className="shrink-0 text-xs tabular-nums text-muted-foreground">{folder.count}</span>
