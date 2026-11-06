@@ -196,6 +196,12 @@ pnpm build
 
 💬 [Join the Discord](https://discord.gg/zEB4VjmfSb) for questions, help, feedback, and updates.
 
+## Contributors
+
+Thank you to everyone who has helped build X Media! New here? Read [CONTRIBUTING.md](CONTRIBUTING.md) and pick a [good first issue](https://github.com/blixvip/x-media/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22).
+
+<a href="https://github.com/blixvip/x-media/graphs/contributors"><img src="https://contrib.rocks/image?repo=blixvip/x-media" alt="Contributors" /></a>
+
 ## Discovery, attribution, and licensing
 
 The repository title, description, topics, and README describe **X / Twitter video search, public media archives, photo browsing, and local libraries** in plain language. App pages also have descriptive titles, descriptions, and sharing metadata. The personal app is marked `noindex`; discovery is directed to the public source repository, not a user's saved library. Search engines decide whether and where to show a repository, so indexing and rankings are never guaranteed. [Google's SEO guidance](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) explains these limits.
