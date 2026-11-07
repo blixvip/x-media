@@ -1,4 +1,4 @@
-param([int]$Port = 3000, [switch]$Open, [switch]$Supervise)
+param([int]$Port = 4330, [switch]$Open, [switch]$Supervise)
 $ErrorActionPreference = 'Stop'
 $project = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $url = "http://127.0.0.1:$Port"
@@ -10,7 +10,8 @@ try {
         exit 0
     }
 } catch { }
-$node = (Get-Command node.exe -ErrorAction Stop).Source
+$bundledNode = Join-Path $project '.data\runtime\node.exe'
+$node = if (Test-Path -LiteralPath $bundledNode) { $bundledNode } else { (Get-Command node.exe -ErrorAction Stop).Source }
 $next = Join-Path $project 'node_modules\next\dist\bin\next'
 if (-not (Test-Path -LiteralPath (Join-Path $project '.next\BUILD_ID'))) { throw 'Build X Media first with npm run build.' }
 $logs = Join-Path $project '.data'

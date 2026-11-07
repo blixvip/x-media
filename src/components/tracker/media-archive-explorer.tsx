@@ -19,6 +19,8 @@ import { useMemo, useState, type FormEvent } from "react";
 
 import { MediaHeader } from "./media-header";
 import { FolderPicker } from "@/components/folders/folder-picker";
+import { MasterSaveButton } from '@/components/master-save-button';
+import { masterReference } from '@/lib/master-reference';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -367,7 +369,7 @@ function ArchiveResults({ result, jobId, onRepair }: { result: MediaArchiveResul
                   </div>
                 )}
                 <p className="mt-5 text-base leading-7 text-foreground/90">{selected.postText}</p>
-                <div className="mt-4"><FolderPicker key={selected.id} media={{ source: "x", id: selected.id, jobId }} /></div>
+                <div className="mt-4 flex flex-wrap items-center gap-2"><FolderPicker key={selected.id} media={{ source: "x", id: selected.id, jobId }} /><MasterSaveButton key={selected.postId} reference={masterReference({ id:selected.postId, username:result.username, text:selected.postText, createdAt:selected.createdAt, media:result.items.filter(item=>item.postId===selected.postId).map(item=>item.media) })} /></div>
                 <Button
                   className="mt-5"
                   variant="outline"

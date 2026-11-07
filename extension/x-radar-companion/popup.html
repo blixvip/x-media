@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>X Master</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header><img src="icon.svg" alt=""><div><b>X Master</b><span id="connection">Not paired</span></div></header>
+    <main>
+      <section id="pairing">
+        <h1>Pair extension</h1>
+        <button id="open-media-unpaired" class="secondary" type="button">Open X Media ↗</button>
+        <p>Open X Media → Saved → Chrome extension. Generate a pairing code there.</p>
+        <label>App URL<input id="app-url" type="url" value="http://127.0.0.1:4330" autocomplete="url"></label>
+        <label>Pairing code<input id="pair-code" inputmode="text" maxlength="16" placeholder="XM-123456" autocomplete="one-time-code"></label>
+        <button id="pair" type="button">Pair securely</button>
+      </section>
+      <section id="creator" hidden>
+        <div class="target"><span>Active X post</span><b id="target">Detecting…</b></div>
+        <button id="save-reference" type="button">Save post + media</button>
+        <button id="open-videos" class="secondary" type="button">Saved videos ↗</button>
+        <button id="open-media" class="secondary" type="button">Open X Media ↗</button>
+        <button id="open-references" class="secondary" type="button">Open reference library ↗</button>
+        <p id="queue-status">Checking save queue…</p>
+        <details><summary>Review local save queue</summary><ul id="queue-list"></ul><button id="clear-queue" class="danger" type="button">Discard queued saves</button><p>Queued saves need Chrome online until the server accepts them. Saved posts appear in the paired app’s library.</p></details>
+        <details><summary>Writing tools</summary><div class="tools">
+        <label>Reply draft<textarea id="draft" maxlength="12000" placeholder="Write a rough reply—or leave blank to generate from the post."></textarea></label>
+        <div class="grid"><button id="reply" type="button">Craft reply</button><button id="quote" class="secondary" type="button">Craft quote</button></div>
+        <label>Result<textarea id="result" maxlength="25000" placeholder="Your voice-matched result appears here."></textarea></label>
+        <div class="grid"><button id="insert" type="button">Insert in X</button><button id="copy" class="secondary" type="button">Copy</button></div>
+        <div class="grid"><button id="library" class="quiet" type="button">Save example</button><button id="draft-save" class="quiet" type="button">Save draft</button></div>
+        </div></details>
+        <button id="sidepanel" class="quiet" type="button">Open live radar panel</button>
+        <button id="open-app" class="link" type="button">Open full X Master ↗</button>
+        <button id="unpair" class="danger" type="button">Unpair this device</button>
+      </section>
+      <output id="status" aria-live="polite"></output>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

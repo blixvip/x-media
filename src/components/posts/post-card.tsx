@@ -5,6 +5,8 @@ import { CheckIcon, CopyIcon, ExternalLinkIcon, EyeIcon, HeartIcon, MessageCircl
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import type { Post } from "@/lib/posts/types";
+import { MasterSaveButton } from '@/components/master-save-button';
+import { masterReference } from '@/lib/master-reference';
 
 const compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
 export function formatCount(value: number | null) { return value === null ? "—" : compact.format(value); }
@@ -62,7 +64,8 @@ export function PostCard({ post, rank, short }: { post: Post; rank: number; shor
           {([["Likes", post.likes, HeartIcon], ["Reposts", post.reposts, Repeat2Icon], ["Replies", post.replies, MessageCircleIcon], ["Views", post.views, EyeIcon]] as const).map(([label, count, Icon]) =>
             <span key={label} className={label === "Likes" ? "text-foreground" : ""} title={`${label}: ${count === null ? "not available" : count.toLocaleString()} · checked ${postDate(post.fetchedAt)}`} aria-label={`${count === null ? "Unavailable" : count.toLocaleString()} ${label.toLowerCase()}`}><Icon aria-hidden /><span>{formatCount(count)}</span></span>)}
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center gap-1">
+          <MasterSaveButton key={post.id} reference={masterReference(post)} />
           <Button size="sm" variant="ghost" onClick={() => void copy()} aria-label={`Copy tweet ${rank} text`}>{copied ? <CheckIcon aria-hidden /> : <CopyIcon aria-hidden />}<span>Copy</span></Button>
           <Button size="sm" variant="ghost" nativeButton={false} role="link" render={<a href={url} target="_blank" rel="noreferrer" />} aria-label={`Open tweet ${rank} on X`}><ExternalLinkIcon aria-hidden /><span>Open</span></Button>
         </div>

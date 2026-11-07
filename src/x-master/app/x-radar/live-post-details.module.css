@@ -1,0 +1,16 @@
+/* Hallmark · observed evidence, not simulated activity. */
+.avatar { position:relative; display:inline-grid; place-items:center; flex:none; width:2.75rem; height:2.75rem; overflow:hidden; border-radius:50%; background:var(--color-paper-4); color:var(--color-ink-2); box-shadow:0 0 0 1px var(--color-rule-strong), 0 3px 8px var(--color-shadow); font:600 .875rem var(--font-body); }
+.avatar img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.small { width:1.875rem; height:1.875rem; font-size:.75rem; }
+.metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; width:100%; padding-block:1rem; }
+.metric { min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:.4rem; }
+.label { display:flex; align-items:center; gap:.375rem; font:400 .8125rem var(--font-body); color:var(--color-muted); }
+.label svg { width:.875rem; height:.875rem; fill:none; stroke:currentColor; stroke-width:1.6; }
+.metric b { font:500 1rem/1.2 var(--font-outlier); font-variant-numeric:tabular-nums; color:var(--color-ink); white-space:nowrap; }
+.delta { font-size:.6875rem; line-height:1.4; color:var(--color-accent); }
+.delta[data-correction=true] { color:var(--color-muted); }
+.changed { animation:observed-change 600ms ease-out; }
+@keyframes observed-change { from { opacity:.55; } to { opacity:1; } }
+@media(max-width:374px) { .metrics { gap:.5rem; } .label { gap:.2rem; font-size:.75rem; } }
+@media(max-width:639px) { .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(prefers-reduced-motion:reduce) { .changed { animation:none; } }

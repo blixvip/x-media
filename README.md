@@ -1,5 +1,12 @@
 # X Media
 
+**Wi-Fi sync:** copy saved memes and originals between PC and Android with
+**Synced saves**. Downloaded copies work offline. [Pairing and setup](docs/WIFI-SYNC.md).
+
+Now includes **X Master** in the same navigation: Feed, Trending, Saved, Drafts,
+writing tools, and the Chrome video Save button. The local library works without sign-in. X Media's media, Tweets, Reddit, folders, and dashboard remain
+available. See [combined workspace and existing data](docs/X-MASTER.md).
+
 **Browse X media, search tweet history, and collect Reddit memes in one local workspace. Media, tweets, and Reddit collection need no API key or paid subscription.**
 
 X Media is a local web app for browsing an account's available public media. Enter a username, watch results arrive, and switch between videos, photos, GIFs, newest, and oldest. Saved collections reopen without another request to X.
@@ -35,7 +42,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open **[http://127.0.0.1:3000](http://127.0.0.1:3000)**, enter a public username, and select **Find media**. No `.env` file is needed for the archive. Internet access is required to collect new results or play remote media. The build also fetches the Geist fonts through Next.js.
+Open **[http://127.0.0.1:4330](http://127.0.0.1:4330)**, enter a public username, and select **Find media**. No `.env` file is needed for the archive. Internet access is required to collect new results or play remote media. The build also fetches the Geist fonts through Next.js.
 
 Select **Reddit** in the header to browse memes. X Media starts and supervises its bundled Reddit collector; a separate Reddit app is unnecessary. See [Reddit integration and migration](docs/REDDIT.md).
 
@@ -43,7 +50,7 @@ Select **Tweets**, enter a public username, and choose **Find tweets**. No login
 
 Select **Folders** on a media card or in its viewer, create or select folders, then **Save folders**. Open **Folders** in the header to browse your collections. Uncheck one folder and check another to move an item. Deleting a folder or removing a placement preserves the source collection and other folders. See [folder storage and testing](docs/FOLDERS.md).
 
-The commands work in PowerShell, macOS, and Linux shells. The default server binds to `127.0.0.1`, so it is reachable on your own computer. If port 3000 is occupied, run `pnpm dev --port 3101` and open that port instead.
+The commands work in PowerShell, macOS, and Linux shells. The default server binds to `127.0.0.1`, so it is reachable on your own computer. If port 4330 is occupied, run `pnpm dev --port 3101` and open that port instead.
 
 ### Run a production build locally
 

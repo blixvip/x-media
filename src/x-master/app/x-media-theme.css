@@ -1,0 +1,38 @@
+/* X Master's existing components inherit X Media's colors and typography. */
+.x-master-theme.x-master-theme {
+  --color-paper: var(--background);
+  --color-paper-2: var(--card);
+  --color-paper-3: var(--secondary);
+  --color-paper-4: var(--accent);
+  --radar-paper: var(--background);
+  --radar-paper-2: var(--card);
+  --radar-paper-3: var(--secondary);
+  --radar-paper-4: var(--accent);
+  --color-ink: var(--foreground);
+  --color-ink-2: var(--foreground);
+  --color-muted: var(--muted-foreground);
+  --color-quiet: var(--muted-foreground);
+  --color-rule: var(--border);
+  --color-rule-strong: var(--input);
+  --color-accent: var(--primary);
+  --color-accent-strong: var(--primary);
+  --color-accent-soft: var(--accent);
+  --color-accent-ink: var(--primary-foreground);
+  --color-focus: var(--ring);
+  --radar-rule: var(--border);
+  --radar-rule-strong: var(--input);
+  --radar-accent: var(--primary);
+  --radar-accent-soft: var(--accent);
+  --radar-nav-overlay: var(--background);
+  --radar-panel-overlay: var(--card);
+  --font-body: var(--font-geist-sans), system-ui, sans-serif;
+  --font-system: var(--font-geist-sans), system-ui, sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: var(--font-geist-mono), monospace;
+  color-scheme: inherit;
+  background: var(--background);
+  color: var(--foreground);
+  min-height: calc(100dvh - 4rem);
+}
+.x-master-theme [data-master-toolbar] { position: static; background: transparent; border-bottom: 1px solid var(--border); }
+.x-master-theme [data-master-toolbar] > a { display: none; }

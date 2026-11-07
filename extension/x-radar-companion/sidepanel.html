@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>X Master Radar</title><link rel="stylesheet" href="sidepanel.css"></head>
+  <body>
+    <header><img src="icon.svg" alt=""><div><b>X Master</b><span id="connection">Checking connection…</span></div><button id="open" type="button" title="Open full X Master">↗</button></header>
+    <nav aria-label="Workspace"><button class="active" data-tab="now">Now</button><button data-tab="reply">Reply</button><button data-tab="capture">Capture</button><button data-tab="drafts">Drafts</button></nav>
+    <main>
+      <section data-panel="now"><div class="section-head"><div><p>LIVE RADAR</p><h1>Worth your attention</h1></div><span id="count">0 posts</span></div><div id="feed" class="feed"></div><p id="empty">Open X and scroll. Visible public posts will rank here.</p></section>
+      <section data-panel="reply" hidden><p class="eyebrow">VOICE ENGINE</p><h1>Craft on the active post</h1><textarea id="rough" placeholder="Optional rough angle…"></textarea><div class="row"><button id="make-reply" type="button">Reply</button><button id="make-quote" class="secondary" type="button">Quote</button></div><textarea id="output" placeholder="Generated copy appears here"></textarea><div class="row"><button id="insert" type="button">Insert in X</button><button id="copy" class="secondary" type="button">Copy</button></div><small>Never auto-posts. You review and click Post.</small></section>
+      <section data-panel="capture" hidden><p class="eyebrow">YOUR REFERENCE LIBRARY</p><h1>Keep this for later</h1><p class="muted">Click the exact post on X first. Save its text and media together, then add notes in your library.</p><button id="save-reference" type="button">Save post + media</button><button id="open-references" class="secondary" type="button">Open reference library ↗</button><details><summary>Other capture tools</summary><button id="save-example" class="secondary" type="button">Save as voice example</button><button id="save-draft" class="secondary" type="button">Save as draft</button><button id="save-video" class="secondary" type="button">Send video to Drive</button></details></section>
+      <section data-panel="drafts" hidden><p class="eyebrow">DRAFT VAULT</p><h1>Keep momentum</h1><p class="muted">Drafts sync through X Master and stay available across the app and extension.</p><button id="open-drafts" type="button">Open draft vault ↗</button></section>
+      <output id="status" aria-live="polite"></output>
+    </main>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

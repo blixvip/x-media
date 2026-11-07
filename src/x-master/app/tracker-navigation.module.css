@@ -1,0 +1,8 @@
+.product { display: grid; gap: .2rem; min-width: 0; padding-bottom: 1rem; border-bottom: 1px solid #34353b; margin-bottom: 1rem; color: #d5d5d9; }
+.label { margin: 0 0 .6rem; padding-inline: .75rem; color: #aaaab3; font: 600 .75rem/1.4 system-ui,sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.link { display: flex; align-items: center; gap: .7rem; min-height: 2.75rem; padding: .55rem .75rem; border-radius: .625rem; color: #d5d5d9; text-decoration: none; font: 500 .875rem/1.4 system-ui,sans-serif; }
+.link svg { width: 1.125rem; height: 1.125rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.link:hover { background: #292a30; color: #faf8f2; }
+.link[aria-current="page"] { background: linear-gradient(110deg,#343026,#222329); color: #e8c76b; box-shadow: inset 2px 0 #e8c76b, inset 0 1px #454137; }
+.link:focus-visible { outline: 2px solid #e8c76b; outline-offset: 3px; }
+.link:active { background: #39352c; }

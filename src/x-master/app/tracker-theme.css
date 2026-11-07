@@ -1,0 +1,87 @@
+/* Shared charcoal, warm accent, generous reading rhythm. Legacy data contracts stay intact. */
+html:has(.tracker-public), body:has(.tracker-public) { background: #15161b; color-scheme: dark; }
+.tracker-public {
+  --ink: #f0eee8; --muted: #b0b2bc; --line: #363840; --surface: #202127;
+  --blue: #9fbaff; --violet: #e8c76b; --green: #80d6aa; --coral: #efa58e;
+  color: var(--ink); background: #15161b; grid-template-columns: 14rem minmax(0,1fr);
+  font: 1rem/1.55 system-ui,sans-serif; font-optical-sizing: auto;
+}
+.tracker-public .sidebar { width: 14rem; padding: 1.5rem .875rem; background: rgba(20,21,26,.96); border-color: var(--line); gap: .5rem; }
+.tracker-public .brand-lockup { padding: 0 .5rem 1.5rem; font-size: 1rem; color: #f0eee8; white-space: nowrap; }
+.tracker-public .brand-mark { flex: none; background: linear-gradient(145deg,#5e5230,#2f2b21); border: 1px solid #897646; box-shadow: inset 0 1px #d7bd7066,0 6px 16px #0004; }
+.tracker-public .brand-mark:before,.tracker-public .brand-mark:after { border-color: #e8c76b; }
+.tracker-public .brand-mark i { background: #e8c76b; }
+.tracker-public .nav-item { min-height: 3rem; justify-content: flex-start; padding: .5rem .75rem; font-size: .875rem; }
+.tracker-public .nav-item.active { color: #e8c76b; background: #353023; box-shadow: inset 2px 0 #e8c76b; }
+.tracker-public .nav-item:hover { transform: none; }
+.tracker-public .workspace { max-width: 1600px; min-width: 0; padding: 2rem clamp(1rem,2.5vw,3rem) 4rem; overflow: clip; }
+.tracker-public .topbar { align-items: flex-start; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.75rem; }
+.tracker-public .topbar h1 { font-size: clamp(1.8rem,3vw,2.5rem); line-height: 1.1; letter-spacing: -.035em; }
+.tracker-public .view-description { margin-top: .6rem; font-size: .9375rem; line-height: 1.55; max-width: 60ch; }
+.tracker-public .topbar-actions { flex-wrap: wrap; gap: .5rem; justify-content: flex-start; }
+.tracker-public :is(button,select,input:not([type=checkbox]),summary) { min-height: 3rem; }
+.tracker-public :is(button,a,summary) { touch-action: manipulation; }
+.tracker-public :is(button,a,input,select,textarea,summary):focus-visible { outline: 2px solid #e8c76b; outline-offset: 3px; }
+.tracker-public :is(input,select,textarea) { font-size: 1rem; color: #f0eee8; background-color: #24252c; border-color: #50525e; }
+.tracker-public :is(h2,h3,h4) { color: #f0eee8; text-wrap: balance; }
+.tracker-public :is(.panel,.glass-panel,.public-evidence-lead,.radar-guide,.command-opportunity-card) { border-color: #393b44; box-shadow: inset 0 1px #ffffff08,0 10px 30px #0002; }
+.tracker-public .radar-guide { grid-template-columns: minmax(0,1fr) minmax(0,1fr); padding: 1.5rem; gap: 1.5rem; background: linear-gradient(110deg,#2b2922,#202127 70%); }
+.tracker-public .radar-guide-copy h2 { font-size: 1.5rem; }
+.tracker-public .radar-guide-copy p { font-size: .875rem; line-height: 1.6; }
+.tracker-public .radar-guide-actions { grid-column: 1/-1; }
+.tracker-public .filter-row { gap: .5rem; margin-block: 1.25rem; }
+.tracker-public .filter-pill { padding-inline: .875rem; font-size: .8125rem; }
+.tracker-public .filter-pill.selected { color: #f2d67f; background: #3b3220; border-color: #877240; }
+.tracker-public .primary-button { background: #e8c76b; color: #211d12; border: 1px solid #f5dc98; box-shadow: inset 0 1px #fff6,0 4px 12px #0003; }
+.tracker-public .primary-button:hover { background: #f1d88c; }
+.tracker-public .system-card { margin-top: 1rem; padding: 1rem; background: #202127; }
+.tracker-public .system-card p { margin-left: 0; line-height: 1.5; }
+.tracker-public .user-card { margin-top: .75rem; }
+.tracker-public :is(.command-grid,.dashboard-grid,.public-intelligence-grid) { gap: 1.5rem; }
+.tracker-public .attention-grid { align-items: start; gap: 1.25rem; }
+.tracker-public .signal-stack { grid-template-rows: auto auto; align-items: start; gap: 1.25rem; }
+.tracker-public .public-source-mini-list { max-height: 18rem; overflow-y: auto; scrollbar-width: thin; overscroll-behavior: contain; padding-right: .5rem; }
+.tracker-public .public-evidence-lead { min-height: 0; }
+.tracker-public .public-evidence-lead .story-copy > p:last-child,
+.tracker-public .rednote-import-copy > p:not(.modal-eyebrow) { font-size: .875rem; line-height: 1.65; }
+.tracker-public :is(.feed-source,.mini-source,.source-logo).hacker_news { background: #a54300; color: #fff2dc; }
+.tracker-public .tracker-source-bar { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; padding: 1rem 1.25rem; margin-bottom: 1rem; border: 1px solid #454039; border-radius: .875rem; background: linear-gradient(115deg,#2c2921,#202127); }
+.tracker-source-bar label { font-size: .8125rem; font-weight: 600; }
+.tracker-source-bar select { padding-inline: .75rem; border: 1px solid #55525a; border-radius: .5rem; }
+.tracker-source-bar span { flex: 1 1 15rem; font-size: .8125rem; color: #c0bec1; }
+.tracker-source-bar a { display: inline-flex; align-items: center; min-height: 3rem; color: #e8c76b; font-size: .875rem; }
+.tracker-mobile-menu { display: none; }
+.runtime-gate.tracker-public { display: flex; flex-direction: column; background: #15161b; }
+.tracker-public :is(.feed-row,.library-feed-row) { min-height: 5rem; height: auto; padding-block: 1rem; align-items: center; gap: .875rem; }
+.tracker-public :is(.feed-copy,.library-feed-row > div) { min-width: 0; }
+.tracker-public :is(.feed-copy strong,.library-feed-row > div > strong) { display: block; white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; font-size: .9375rem; line-height: 1.5; }
+.tracker-public :is(.feed-copy p,.library-feed-row > div > p) { white-space: normal; overflow: visible; font-size: .8125rem; line-height: 1.6; margin-top: .35rem; color: #bfc0c8; }
+.tracker-public .feed-source { width: 2rem; height: 2rem; flex: none; font-size: .875rem; }
+@media (max-width: 1023px) {
+  .tracker-public { display: block; }
+  .tracker-public .sidebar { position: fixed; inset: auto 0 0; width: 100%; height: auto; min-height: 4.5rem; padding: .5rem .75rem max(.5rem,env(safe-area-inset-bottom)); display: block; z-index: 35; border: 0; border-top: 1px solid #454650; overflow: visible; }
+  .tracker-public .sidebar > :not(.nav-list) { display: none; }
+  .tracker-public .nav-list { display: flex; overflow-x: auto; gap: .375rem; scrollbar-width: thin; }
+  .tracker-public .nav-label { display: none; }
+  .tracker-public .nav-item,.tracker-public .nav-item:nth-of-type(-n+5) { display: flex; flex: 0 0 auto; flex-direction: row; min-height: 3rem; padding: .5rem .75rem; font-size: .8125rem; white-space: nowrap; }
+  .tracker-public .nav-item span { font-size: 1rem; }
+  .tracker-public .workspace { padding: 1.5rem 1rem 7rem; }
+  .tracker-public .tracker-mobile-menu { display: block; position: relative; z-index: 36; padding: .75rem 1rem; border-bottom: 1px solid #34353b; background: #191a20; }
+  .tracker-mobile-menu summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; list-style: none; cursor: pointer; font-size: .875rem; color: #f0eee8; }
+  .tracker-mobile-menu summary::-webkit-details-marker { display: none; }
+  .tracker-mobile-menu summary span:last-child { color: #e8c76b; }
+  .tracker-mobile-menu > section { margin-top: 1rem; }
+}
+@media (max-width: 760px) {
+  .tracker-public .radar-guide { grid-template-columns: minmax(0,1fr); }
+  .tracker-public .topbar { gap: 1rem; }
+  .tracker-public .topbar-actions { width: 100%; }
+  .tracker-public .view-description { display: block; }
+  .tracker-public .topbar-mode { display: inline-flex; }
+  .tracker-public .topbar-actions .search-button { display: inline-flex; }
+  .tracker-public .tracker-source-bar { align-items: stretch; padding: 1rem; }
+  .tracker-source-bar span { flex-basis: 100%; }
+}
+@media (prefers-reduced-transparency: reduce) { .tracker-public .sidebar { background: #191a20; backdrop-filter: none; } }
+@media (prefers-contrast: more) { .tracker-public { --line: #898b96; --muted: #e0e0e5; } .tracker-public :is(p,small,label) { color: #e0e0e5; } }
+@media (prefers-reduced-motion: reduce) { .tracker-public *, .tracker-public *::before, .tracker-public *::after { animation: none; scroll-behavior: auto; } }

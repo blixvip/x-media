@@ -1,0 +1,123 @@
+/* Hallmark tokens · atmospheric Terminal ecosystem index */
+.x-master-theme {
+  --color-paper: oklch(12% 0.012 82);
+  --color-paper-2: oklch(15% 0.014 82);
+  --color-paper-3: oklch(19% 0.016 82);
+  --color-paper-4: oklch(23% 0.018 82);
+  --color-ink: oklch(94% 0.012 90);
+  --color-ink-2: oklch(83% 0.014 88);
+  --color-muted: oklch(69% 0.014 82);
+  --color-quiet: oklch(59% 0.012 82);
+  --color-rule: oklch(28% 0.016 82);
+  --color-rule-strong: oklch(40% 0.018 82);
+  --color-accent: oklch(82% 0.16 92);
+  --color-accent-strong: oklch(74% 0.15 90);
+  --color-accent-soft: oklch(24% 0.055 90);
+  --color-accent-ink: oklch(17% 0.024 82);
+  --color-focus: oklch(88% 0.15 95);
+  --color-warning: oklch(78% 0.15 58);
+  --color-warning-soft: oklch(25% 0.05 58);
+  --color-error: oklch(70% 0.18 32);
+  --color-error-soft: oklch(23% 0.055 32);
+  --color-overlay: oklch(5% 0.01 82 / 0.72);
+  --color-nav-overlay: oklch(12% 0.012 82 / 0.94);
+  --color-panel-overlay: oklch(15% 0.014 82 / 0.97);
+  --color-bloom-primary: oklch(50% 0.10 82 / 0.1);
+  --color-bloom-secondary: oklch(38% 0.07 52 / 0.07);
+  --color-grid: oklch(75% 0.015 82 / 0.035);
+  --color-transparent: oklch(0% 0.005 82 / 0);
+  --color-shadow: oklch(4% 0.01 82 / 0.48);
+  /* X Master material overrides; the broader homepage keeps its own theme. */
+  --radar-paper: oklch(17% .006 260);
+  --radar-paper-2: oklch(21% .008 260);
+  --radar-paper-3: oklch(25% .009 260);
+  --radar-paper-4: oklch(30% .01 260);
+  --radar-rule: oklch(33% .01 260);
+  --radar-rule-strong: oklch(44% .012 260);
+  --radar-accent: oklch(82% .12 85);
+  --radar-accent-soft: oklch(27% .025 85);
+  --radar-nav-overlay: oklch(15% .006 260 / .96);
+  --radar-panel-overlay: oklch(23% .008 260 / .97);
+
+  --font-display: "Space Grotesk Variable", "Segoe UI", sans-serif;
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Space Grotesk Variable", "Segoe UI", sans-serif;
+  --font-outlier: "JetBrains Mono Variable", "Cascadia Mono", monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.375rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-display-s: clamp(2rem, 5vw, 3.05rem);
+  --text-display: clamp(2.5rem, calc(5vw + 1rem), 4.25rem);
+
+  --leading-tight: 1.02;
+  --leading-copy: 1.55;
+  --tracking-display: -0.045em;
+  --tracking-label: 0.09em;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-instant: 100ms;
+  --dur-fast: 150ms;
+  --dur-standard: 250ms;
+  --dur-slow: 400ms;
+  --dur-reduced: 150ms;
+  --dur-micro: var(--dur-instant);
+  --dur-short: var(--dur-fast);
+  --dur-long: var(--dur-slow);
+  --ease-out: var(--ease-enter);
+  --ease-in-out: var(--ease-standard);
+
+  --rule-thin: 1px;
+  --rule-strong: 2px;
+  --radius-control: 0.625rem;
+  --radius-panel: 1rem;
+  --radius-round: 999px;
+  --radius-plane: var(--radius-panel);
+  --radius-media: 0.75rem;
+  --radius-pill: var(--radius-round);
+  --z-base: 0;
+  --z-nav: 20;
+  --z-focus: 30;
+  --z-raised: 1;
+  --z-sticky: 10;
+  --z-overlay: 40;
+  --z-modal: 50;
+
+  --page-max: 100rem;
+  --nav-height: 3.75rem;
+  --control-height: 2.75rem;
+  --grid-size: 2.5rem;
+  --input-slot: 8.5rem;
+  --input-icon-slot: 2.5rem;
+  --rule-focus: 2px;
+  --focus-offset: 2px;
+  --reveal-delay-1: 70ms;
+  --reveal-delay-2: 140ms;
+  --press-distance: 1px;
+  --hover-distance: -1px;
+  --shadow-plane: 0 1.125rem 3rem var(--color-shadow);
+}

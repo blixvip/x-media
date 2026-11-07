@@ -6,5 +6,7 @@ export async function register() {
     void getPostsService().catch((error) => console.error("Tweet collector:", error.message));
     const { getRedditService } = await import("@/lib/reddit/service");
     void getRedditService().catch((error) => console.error("Reddit collector:", error.message));
+    const { wifiSync } = await import("./lib/wifi-sync/server");
+    void wifiSync().startIfEnabled().catch(() => console.error("Wi-Fi sync could not start. Open Synced saves to retry."));
   }
 }

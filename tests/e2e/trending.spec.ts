@@ -1,0 +1,61 @@
+import { expect, test } from '@playwright/test';
+
+test('top 20 topics sort independently and update automatically', async ({page}, info) => {
+  const base=Date.now(); let revision=0; let fail=false;
+  await page.clock.install({time:base});
+  await page.setViewportSize({width:info.project.name.includes('mobile')?375:1440,height:1000});
+  const errors:string[]=[]; page.on('pageerror',error=>errors.push(error.message));
+  await page.route('**/api/x-master/auth',r=>r.fulfill({json:{user:null}}));
+  await page.route('**/api/x-radar/discord',r=>r.fulfill({json:{configured:false}}));
+  await page.route('**/api/x-radar/automation',r=>r.fulfill({status:503,json:{error:'Not configured'}}));
+  await page.route('**/api/x-radar?**',r=>{
+    if(fail) return r.fulfill({status:503,json:{error:'Temporary outage'}});
+    const generated_at=new Date(base+(revision-1)*60000).toISOString();
+    const headlines=['A new coding assistant release','A practical guide to small AI models','Developers discuss faster code reviews','A new open-source image model','New tools for running agents locally'];
+    const items=Array.from({length:revision?26:25},(_,i)=>({id:`p${i}`,rank:i+1,title:i===25?'New model announced just now':`${headlines[i%5]} ${i+1}`,body:i===25?'New model announced just now':`${headlines[i%5]} ${i+1}`,source:'x',source_url:`https://x.com/builder${i}/status/${10000+i}`,age_seconds:i*3600,creator:{username:`@builder${i}`,display_name:`Builder ${i+1}`},observed_metrics:{likes:100+i+(revision?(i===2?400:5):0),replies:10,reposts:2},score:{potential:50,velocity:50,relevance:100,label:'watching',basis:'single_snapshot_estimate',confidence:'estimated'},triage:{priority_score:50,tier:'watch'}}));
+    const events=items.map((p,i)=>({id:`topic-${i}`,title:p.title,kind:'topic',summary:p.title,why:'Collected discussion',confirmation:'unverified',importance:50,alert:false,url:p.source_url,published_at:new Date(base+(i===25?30000:-i*3600000)).toISOString(),first_seen_at:generated_at,last_seen_at:generated_at,author_count:1,posts:[{id:p.id,title:p.title,url:p.source_url,author:p.creator.username,published_at:generated_at}]}));
+    return r.fulfill({json:{mode:'x_only_radar',generated_at,refresh_after_seconds:60,query:{keywords:['ai'],country:'CA'},watched_handles:[],items,trends:[],sources:{posts:{status:'live',label:'Watched posts',item_count:items.length},trends:{status:'live',label:'Topics',item_count:0}},score_method:{name:'Observed',weights:{},limitation:'Sample'},awareness:{events,storage:'durable',checked_at:generated_at}}});
+  });
+  await page.goto('/x-master?view=trending');
+  const nav=page.getByRole('navigation',{name:'Media source'});
+  await expect(nav.getByRole('link',{name:'Trending',exact:true})).toHaveAttribute('aria-current','page');
+  const topics=page.locator('[data-topic-id]');
+  await expect(topics).toHaveCount(20);
+  await expect(topics.first()).toHaveAttribute('data-topic-id','topic-24');
+  await page.getByRole('button',{name:'Most recent',exact:true}).click();
+  await expect(topics.first()).toHaveAttribute('data-topic-id','topic-0');
+  await topics.first().getByText('1 collected post',{exact:true}).click();
+  await expect(topics.first().getByRole('link').last()).toHaveAttribute('href','https://x.com/builder0/status/10000');
+  await topics.first().getByText('1 collected post',{exact:true}).click();
+  await page.getByRole('button',{name:'Most active',exact:true}).click();
+  await expect(topics.first().getByText('Activity not available yet',{exact:true})).toBeVisible();
+  revision=1;
+  await page.clock.fastForward(61000);
+  await expect(topics.first()).toHaveAttribute('data-topic-id','topic-2');
+  await expect(topics.first().getByText('400/min',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Most recent',exact:true}).click();
+  await expect(topics.first().getByRole('heading')).toHaveText('New model announced just now');
+  await expect(topics).toHaveCount(20);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:info.outputPath('trending.png')});
+  await page.evaluate(()=>document.documentElement.style.fontSize='150%');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  fail=true;
+  await page.getByRole('button',{name:'Refresh',exact:true}).click();
+  await expect(page.getByText('Update failed. Showing the last loaded topics.',{exact:false})).toBeVisible();
+  await expect(topics).toHaveCount(20);
+  await nav.getByRole('link',{name:'Saved',exact:true}).click();
+  await page.goBack();
+  await expect(page.getByRole('heading',{name:'Trending',exact:true})).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('empty topics and source failures have clear states',async({page})=>{
+  let fail=true;
+  await page.route('**/api/x-radar?**',r=>fail?r.fulfill({status:503,json:{error:'Unavailable'}}):r.fulfill({json:{mode:'x_only_radar',generated_at:new Date().toISOString(),items:[],trends:[],watched_handles:[],query:{keywords:[],country:'CA'},sources:{posts:{status:'live'},trends:{status:'live'}},score_method:{weights:{}},refresh_after_seconds:60,awareness:{events:[],storage:'durable'}}}));
+  await page.goto('/x-master?view=trending');
+  await expect(page.getByRole('heading',{name:'Couldn’t load topics'})).toBeVisible();
+  fail=false;
+  await page.getByRole('button',{name:'Try again',exact:true}).click();
+  await expect(page.getByRole('heading',{name:'No trending topics yet'})).toBeVisible();
+});
