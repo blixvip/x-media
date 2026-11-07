@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Next.js-16-111?style=flat-square" alt="Next.js 16">
   <img src="https://img.shields.io/badge/API%20key-not%20needed-111?style=flat-square" alt="No API key needed">
   <img src="https://img.shields.io/badge/data-stays%20on%20your%20machine-111?style=flat-square" alt="Local data">
-  <a href="https://discord.gg/zEB4VjmfSb"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://discord.gg/wJfHQXfEMM"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
 </p>
 
 <p align="center">
@@ -194,7 +194,9 @@ pnpm build
 
 ## Community
 
-💬 [Join the Discord](https://discord.gg/zEB4VjmfSb) for questions, help, feedback, and updates.
+**Want to send a PR? Join the [blix open source Discord](https://discord.gg/wJfHQXfEMM) first.** It's the one server for everyone contributing to any blixvip repo: questions, ideas, PR discussion, help, and release news.
+
+💬 [Join the Discord](https://discord.gg/wJfHQXfEMM) for questions, help, feedback, and updates.
 
 ## Contributors
 
