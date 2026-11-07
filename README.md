@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Next.js-16-111?style=flat-square" alt="Next.js 16">
   <img src="https://img.shields.io/badge/API%20key-not%20needed-111?style=flat-square" alt="No API key needed">
   <img src="https://img.shields.io/badge/data-stays%20on%20your%20machine-111?style=flat-square" alt="Local data">
-  <a href="https://discord.gg/wJfHQXfEMM"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
+  <a href="https://discord.gg/grokbot"><img src="https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
 </p>
 
 <p align="center">
@@ -194,9 +194,20 @@ pnpm build
 
 ## Community
 
-**Want to send a PR? Join the [blix open source Discord](https://discord.gg/wJfHQXfEMM) first.** It's the one server for everyone contributing to any blixvip repo: questions, ideas, PR discussion, help, and release news.
+**Want to send a PR? Join the [blix open source Discord](https://discord.gg/grokbot) first.** It's the one server for everyone contributing to any blixvip repo: questions, ideas, PR discussion, help, and release news.
 
-💬 [Join the Discord](https://discord.gg/wJfHQXfEMM) for questions, help, feedback, and updates.
+💬 [Join the Discord](https://discord.gg/grokbot) for questions, help, feedback, and updates.
+
+<!-- discord-incentive:start -->
+### 💬 Why join the Discord first
+
+**[discord.gg/grokbot](https://discord.gg/grokbot)** is the one server for every blixvip repo, and it gets you more than a chat window:
+
+- 🟢 **Claim an issue and it is yours.** Say which one in `#contributors` and it is assigned to you, so two people never build the same thing twice.
+- 🏷️ **A contributor role** on the server the moment your first pull request is merged.
+- 🗺️ **A say in what gets built.** The roadmap is argued out there before it turns into issues.
+- 🙋 **A human to ask.** Stuck on setup, or unsure whether an idea is even wanted? Faster than waiting on an issue thread.
+<!-- discord-incentive:end -->
 
 ## Contributors
 
