@@ -1,15 +1,15 @@
 # Contributing to X Media
 
-> 💬 **Before you open a PR, join the [blix open source Discord](https://discord.gg/wJfHQXfEMM).** It's the home for contributors across every blixvip repo: ask questions, run ideas by us, and talk through your PR.
+> 💬 **Before you open a PR, join the [blix open source Discord](https://discord.gg/grokbot).** It's the home for contributors across every blixvip repo: ask questions, run ideas by us, and talk through your PR.
 
-Thanks for helping! Questions and ideas are welcome in the **[Discord](https://discord.gg/wJfHQXfEMM)**, and bugs go in [GitHub issues](https://github.com/blixvip/x-media/issues/new/choose).
+Thanks for helping! Questions and ideas are welcome in the **[Discord](https://discord.gg/grokbot)**, and bugs go in [GitHub issues](https://github.com/blixvip/x-media/issues/new/choose).
 
 ## Finding something to work on
 
 - [Good first issues](https://github.com/blixvip/x-media/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) are small and list the files to touch.
 - [Help wanted](https://github.com/blixvip/x-media/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues are bigger.
 - Comment on the issue to claim it so two people don't build the same thing. If you go quiet for a week, it opens up again.
-- Have your own idea? For anything larger than a bug fix, raise it in the [Discord](https://discord.gg/wJfHQXfEMM) or open an issue first.
+- Have your own idea? For anything larger than a bug fix, raise it in the [Discord](https://discord.gg/grokbot) or open an issue first.
 
 By contributing, you agree your work is released under the project's [MIT License](LICENSE).
 
@@ -57,4 +57,4 @@ pnpm build           # only if you touched routing, config or server code
 - `src/components/tracker/tracker-dashboard.tsx`, `src/lib/tracker/service.ts`: the optional `/dashboard` watchlist (demo data without a token)
 - `docs/`: architecture, API, performance and per-feature notes. `PRODUCT.md` and `DESIGN.md` set product and visual boundaries
 
-Made something with it? Show it off in the [Discord](https://discord.gg/wJfHQXfEMM).
+Made something with it? Show it off in the [Discord](https://discord.gg/grokbot).
